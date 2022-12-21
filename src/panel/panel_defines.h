@@ -1,0 +1,10 @@
+#ifndef PANEL_DEFINES_H
+#define PANEL_DEFINES_H
+
+#define UP_ARROW    2490368
+#define DOWN_ARROW  2621440
+#define LEFT_ARROW  2424832
+#define RIGHT_ARROW 2555904
+#define NO_KEY      -1
+
+#endif // PANEL_DEFINES_H

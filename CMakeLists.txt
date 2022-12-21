@@ -1,6 +1,5 @@
-﻿# CMakeList.txt: proyecto de CMake para CMakeProject1, incluya el origen y defina
-# la lógica específica del proyecto aquí.
-#
+﻿# CMakeLists.txt file for SnakeCppGame project.
+
 cmake_minimum_required (VERSION 3.5)
 project(SnakeCppGame VERSION 0.1.0)
 
@@ -9,9 +8,9 @@ find_package(OpenCV COMPONENTS)
 Include_directories(${OpenCV_INCLUDE_DIRS})
 
 # Source and header files 
-Include_directories(include)
-set(SOURCES src/main.cpp src/panel.cpp)
-set(HEADERS include/panel.h)
+Include_directories(src/panel/ src/snake/ src/common/)
+set(SOURCES src/main.cpp src/panel/panel.cpp src/snake/snake.cpp)
+set(HEADERS src/panel/panel.h src/snake/snake.h src/common/common_defines.h)
 add_executable(SnakeCppGame ${SOURCES} ${HEADERS})
 
 target_link_libraries(SnakeCppGame ${OpenCV_LIBS})
