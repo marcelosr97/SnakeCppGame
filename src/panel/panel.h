@@ -10,7 +10,6 @@
 #include "common_defines.h"
 #include "snake.h"
 
-using namespace cv;
 using namespace std;
 
 class Panel
@@ -23,11 +22,9 @@ class Panel
 
     private:
         void m_showImage(void);
-        void m_getKeyInput(void);
         void m_setDir(void);
-        Mat m_background;
-        Rect m_square;
-        int32_t m_key;
+        cv::Mat m_background;
+        cv::Rect m_square;
         Snake& m_snake;
 };
 
