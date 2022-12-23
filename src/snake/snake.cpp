@@ -8,8 +8,8 @@
 Snake::Snake()
 {
     m_dir = RIGHT_DIR;
-    m_xPos = 32;
-    m_yPos = 32;
+    m_xPos = SNAKE_SIZE;
+    m_yPos = SNAKE_SIZE;
 }
 
 void Snake::snakeMainTask()
@@ -27,14 +27,14 @@ uint16_t Snake::getYPosition()
     return m_yPos;
 }
 
-uint8_t Snake::setXPosition()
+void Snake::setXPosition(uint16_t t_xPos)
 {
-    return 0;
+    m_xPos = t_xPos;
 }
 
-uint8_t Snake::setYPosition()
+void Snake::setYPosition(uint16_t t_yPos)
 {
-    return 0;
+    m_yPos = t_yPos;
 }
 
 uint8_t Snake::getDir()
@@ -53,16 +53,16 @@ void Snake::m_updatePosition()
     switch(m_dir)
     {
         case UP_DIR:
-            m_yPos -= 32;
+            m_yPos -= SNAKE_SIZE;
             break;       
         case DOWN_DIR:
-            m_yPos += 32;
+            m_yPos += SNAKE_SIZE;
             break;
         case LEFT_DIR:
-            m_xPos -= 32;
+            m_xPos -= SNAKE_SIZE;
             break;            
         case RIGHT_DIR:
-            m_xPos += 32;
+            m_xPos += SNAKE_SIZE;
             break;
         default:
             // Do nothing

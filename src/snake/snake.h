@@ -13,9 +13,9 @@ class Snake
         Snake();
         void snakeMainTask();
         uint16_t getXPosition();
-        uint8_t setXPosition();
+        void setXPosition(uint16_t t_xPos);
         uint16_t getYPosition();
-        uint8_t setYPosition();
+        void setYPosition(uint16_t t_yPos);
         uint8_t getDir();
         void setDir(uint8_t t_dir);
     private:

@@ -18,11 +18,11 @@ class Panel
         // Constructor 
         Panel(Snake& t_snake);
         // Main Task 
-        void panelMainTask(void);
+        void panelMainTask();
 
     private:
-        void m_showImage(void);
-        void m_setDir(void);
+        void m_showImage();
+        void m_checkSnakeBoundaries();
         cv::Mat m_background;
         cv::Rect m_square;
         Snake& m_snake;
