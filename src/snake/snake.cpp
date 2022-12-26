@@ -3,13 +3,16 @@
 #include <opencv2/imgproc.hpp>
 #include <opencv2/highgui/highgui.hpp>
 #include <conio.h>
+#include <stdlib.h>
+#include <time.h>
 
 // Public functions
 Snake::Snake()
 {
+    srand((uint32_t) time(NULL));
     m_dir = RIGHT_DIR;
-    m_xPos = SNAKE_SIZE;
-    m_yPos = SNAKE_SIZE;
+    m_xPos = rand()%(MAX_X - SNAKE_SIZE);
+    m_yPos = rand()%(MAX_Y - SNAKE_SIZE);
 }
 
 void Snake::snakeMainTask()

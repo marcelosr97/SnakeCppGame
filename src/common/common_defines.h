@@ -9,5 +9,7 @@
 #define PERIOD      50
 #define BLACK_COLOR Scalar(0,0,0)
 #define WHITE_COLOR Scalar(255,255,255)
+#define MAX_X 512
+#define MAX_Y 512
 
 #endif // COMMON_DEFINES_H
