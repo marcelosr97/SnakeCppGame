@@ -23,6 +23,7 @@ class Panel
     private:
         void m_showImage();
         void m_checkSnakeBoundaries();
+        void m_printSnake();
         cv::Mat m_background;
         cv::Rect m_square;
         Snake& m_snake;

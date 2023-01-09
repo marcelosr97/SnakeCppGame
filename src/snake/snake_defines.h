@@ -1,0 +1,7 @@
+#ifndef SNAKE_DEFINES_H
+#define SNAKE_DEFINES_H
+
+#define MIN_LENGTH 3
+#define MAX_LENGTH 255
+
+#endif // SNAKE_DEFINES_H

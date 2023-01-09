@@ -11,5 +11,10 @@
 #define WHITE_COLOR Scalar(255,255,255)
 #define MAX_X 512
 #define MAX_Y 512
+#define MIN_X 0
+#define MIN_Y 0
+#define X_INDEX 0
+#define Y_INDEX 1
+#define HEAD_SLOT 0
 
 #endif // COMMON_DEFINES_H
