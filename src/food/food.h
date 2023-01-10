@@ -15,7 +15,7 @@ class Food
         // Constructor
         Food();
         void foodMainTask();
-        void generateFoodPosition();
+        void generateFoodPosition(uint8_t t_factor);
         uint8_t getXPosition();
         uint8_t getYPosition();
     private:

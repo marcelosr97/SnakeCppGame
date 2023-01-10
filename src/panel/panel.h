@@ -27,6 +27,8 @@ class Panel
         void m_printSnake();
         void m_printFood();
         void m_checkFoodEaten();
+        bool m_checkPositionConflict();
+        void m_commandNewFoodPosition();
         cv::Mat m_background;
         cv::Rect m_square;
         Snake& m_snake;

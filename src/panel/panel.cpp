@@ -4,7 +4,7 @@ using namespace cv;
 
 Panel::Panel(Snake& t_snake, Food& t_food) : m_snake(t_snake), m_food(t_food)
 {
-    ;
+    m_commandNewFoodPosition();
 }
 
 void Panel::panelMainTask()
@@ -70,7 +70,32 @@ void Panel::m_checkFoodEaten()
     // Check if position for snake head slot and food is the same
     if((m_snake.getXPosition(HEAD_SLOT) == m_food.getXPosition()) && (m_snake.getYPosition(HEAD_SLOT) == m_food.getYPosition()))
     {
+        m_commandNewFoodPosition();
         m_snake.increaseLength();
-        m_food.generateFoodPosition();
     }
+}
+
+bool Panel::m_checkPositionConflict()
+{
+    bool ret = false;
+    for(uint8_t index = 0; index <= m_snake.getLength(); index++)
+    {
+        if((m_snake.getXPosition(index) == m_food.getXPosition()) && (m_snake.getYPosition(index) == m_food.getYPosition()))
+        {
+            ret = true;
+            cout << "Conflict" << endl;
+            break;
+        }
+    }
+    return ret;
+}
+
+void Panel::m_commandNewFoodPosition()
+{
+    uint8_t count = 1; // Counter to change the seed
+    do
+    {
+        m_food.generateFoodPosition(count);
+        count++;
+    } while (m_checkPositionConflict() == true);
 }

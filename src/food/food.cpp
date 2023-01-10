@@ -9,7 +9,7 @@
 // Public functions
 Food::Food()
 {  
-    generateFoodPosition();
+    ;
 }
 
 void Food::foodMainTask()
@@ -17,9 +17,9 @@ void Food::foodMainTask()
     ;
 }
 
-void Food::generateFoodPosition()
+void Food::generateFoodPosition(uint8_t t_factor)
 {
-    srand((uint32_t) time(NULL) * time(NULL)); // In order to not get the same seed as the snake
+    srand((uint32_t) time(NULL) * t_factor); // In order to not get the same seed as the snake
     m_xPos = rand()%(MAX_X/FOOD_SIZE - 1) * FOOD_SIZE;
     m_yPos = rand()%(MAX_Y/FOOD_SIZE - 1) * FOOD_SIZE;
 }
