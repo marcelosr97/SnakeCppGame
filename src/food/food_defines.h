@@ -1,0 +1,4 @@
+#ifndef FOOD_DEFINES_H
+#define FOOD_DEFINES_H
+
+#endif // FOOD_DEFINES_H

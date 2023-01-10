@@ -22,6 +22,7 @@ class Snake
         uint8_t getDir();
         void setDir(uint8_t t_dir);
         uint8_t getLength();
+        void increaseLength();
     private:
         void m_updateHead();
         void m_updateTale();

@@ -2,7 +2,7 @@
 
 using namespace cv;
 
-Panel::Panel(Snake &t_snake) : m_snake(t_snake)
+Panel::Panel(Snake& t_snake, Food& t_food) : m_snake(t_snake), m_food(t_food)
 {
     ;
 }
@@ -10,6 +10,7 @@ Panel::Panel(Snake &t_snake) : m_snake(t_snake)
 void Panel::panelMainTask()
 {
     m_checkSnakeBoundaries();
+    m_checkFoodEaten();
     m_showImage();
 }
 
@@ -17,7 +18,10 @@ void Panel::m_showImage()
 {
     // Set black background
     m_background = Mat(MAX_X, MAX_Y, CV_8UC3, BLACK_COLOR);
+
     m_printSnake();
+
+    m_printFood();
     // Show image
     imshow("SnakeCppGame", m_background);
     waitKeyEx(1);
@@ -52,5 +56,21 @@ void Panel::m_printSnake()
     {
         m_square = Rect(m_snake.getXPosition(index), m_snake.getYPosition(index), SNAKE_SIZE, SNAKE_SIZE);
         rectangle(m_background, m_square, WHITE_COLOR, FILLED);
+    }
+}
+
+void Panel::m_printFood()
+{
+    m_square = Rect(m_food.getXPosition(), m_food.getYPosition(), FOOD_SIZE, FOOD_SIZE);
+    rectangle(m_background, m_square, RED_COLOR, FILLED);
+}
+
+void Panel::m_checkFoodEaten()
+{
+    // Check if position for snake head slot and food is the same
+    if((m_snake.getXPosition(HEAD_SLOT) == m_food.getXPosition()) && (m_snake.getYPosition(HEAD_SLOT) == m_food.getYPosition()))
+    {
+        m_snake.increaseLength();
+        m_food.generateFoodPosition();
     }
 }

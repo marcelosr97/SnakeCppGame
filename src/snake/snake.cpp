@@ -55,6 +55,11 @@ uint8_t Snake::getLength()
     return m_length;
 }
 
+void Snake::increaseLength()
+{
+    m_length++;
+}
+
 // Private functions
 void Snake::m_updateHead()
 {   

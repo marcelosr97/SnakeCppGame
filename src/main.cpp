@@ -1,6 +1,7 @@
 #include "panel.h"
 #include "keylistener.h"
 #include "common_defines.h"
+#include "food.h"
 #include <chrono>
 #include <thread>
 
@@ -8,8 +9,9 @@ using namespace std;
 using namespace chrono;
 
 Snake snake;
+Food food;
 KeyListener keylistener(snake);
-Panel panel(snake);
+Panel panel(snake, food);
 
 static void mainThread(void);
 static void goToSleep(system_clock::time_point t_initTime);
