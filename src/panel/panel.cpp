@@ -83,7 +83,6 @@ bool Panel::m_checkPositionConflict()
         if((m_snake.getXPosition(index) == m_food.getXPosition()) && (m_snake.getYPosition(index) == m_food.getYPosition()))
         {
             ret = true;
-            cout << "Conflict" << endl;
             break;
         }
     }
